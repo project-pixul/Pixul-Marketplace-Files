@@ -1,0 +1,39 @@
+.sing-in-container {
+  padding: 15px;
+}
+
+.sing-in-title {
+  color: grey;
+}
+
+.button-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button-container .sing-in-button {
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  color: rgb(162, 160, 160);
+  transition: 0.1s;
+}
+
+.button-container .sing-in-button:first-child {
+  margin-right: 15px;
+}
+
+.button-container .active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+.reset-password-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(162, 160, 160);
+}

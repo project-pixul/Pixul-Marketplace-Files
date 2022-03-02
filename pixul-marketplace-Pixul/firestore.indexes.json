@@ -1,0 +1,37 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "services",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "stars",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "completedJobs",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "stars",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "completedJobs",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
