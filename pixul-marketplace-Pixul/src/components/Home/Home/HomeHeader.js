@@ -1,11 +1,13 @@
-import { HomeHeaderContent } from "./HomeHeader/HomeHeaderContent"
-import { HomeHeaderImage } from "./HomeHeader/HomeHeaderImage"
+import { HomeHeaderContent } from "./HomeHeader/HomeHeaderContent.js";
+import { HomeHeaderImage } from "./HomeHeader/HomeHeaderImage";
+
+import "./Home.css";
 
 export const HomeHeader = ({ popularServices }) => {
   return (
-    <div className="flex flex-col gap-10 mx-auto w-11/12 lg:w-10/12 lg:flex-row">
+    <div className="homeContent">
       <HomeHeaderContent popularServices={popularServices} />
       <HomeHeaderImage />
     </div>
-  )
-}
+  );
+};

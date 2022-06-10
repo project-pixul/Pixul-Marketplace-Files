@@ -1,0 +1,43 @@
+.content .heading {
+  position: relative;
+}
+
+.content .heading > h1 {
+  font-size: 4rem;
+}
+
+.content .heading .block {
+  position: absolute;
+  left: -1rem;
+  height: 12rem;
+  width: 3rem;
+  background-color: #5100ff;
+  z-index: -1;
+}
+
+.content > h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.content > .trending > label {
+  font-weight: 500;
+}
+
+.content > .btns {
+  margin-top: 1rem;
+  width: 18rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content > .btns a {
+  display: grid;
+  place-items: center;
+  height: 2.5rem;
+  width: 8rem;
+  font-weight: 600;
+  color: white;
+  background-color: #5100ff;
+  text-decoration: none;
+}

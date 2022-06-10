@@ -79,7 +79,7 @@ export const Header = () => {
     <header className="w-full bg-gray-100">
       <div className="flex items-center justify-between py-3 px-5 md:px-10">
         {/* LOGO SECTION */}
-        <div
+        {/* <div
           onClick={() => {
             history.push("/home");
           }}
@@ -89,17 +89,17 @@ export const Header = () => {
           <span className="hidden lg:flex text-lg tracking-wide">
             THE COLLECTIVE
           </span>
-        </div>
+        </div> */}
 
         {/* PRINCIPAL CONTAINER */}
         <div className="flex items-center gap-5">
           {/* MENU */}
-          <div className="hidden md:flex">
+          {/* <div className="hidden md:flex">
             <NavBar />
-          </div>
+          </div> */}
 
           {/* WALLET */}
-          <button id="walletButton" onClick={connectWalletPressed}>
+          {/* <button id="walletButton" onClick={connectWalletPressed}>
             {walletAddress.length > 0 ? (
               "Connected: " +
               String(walletAddress).substring(0, 6) +
@@ -108,16 +108,16 @@ export const Header = () => {
             ) : (
               <span>Connect Wallet</span>
             )}
-          </button>
+          </button> */}
 
           {/* USER PROFILE */}
           {authState?.isLoggedIn ? <MarketPlaceUser /> : null}
 
           {/* MOBILE MENU TRIGGER */}
-          <MenuOutlined
+          {/* <MenuOutlined
             onClick={openMenu}
             className="md:hidden text-2xl mb-1"
-          />
+          /> */}
         </div>
       </div>
 

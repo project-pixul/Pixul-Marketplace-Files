@@ -1,0 +1,19 @@
+.accepted {
+  margin-top: 2.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.accepted + div {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.225rem;
+  width: 8rem;
+}
+
+.accepted + div > div {
+  background-position: center;
+  background-size: cover;
+  width: 1.5rem;
+  height: 1.5rem;
+}

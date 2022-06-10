@@ -1,0 +1,23 @@
+.promoted {
+  margin: 0 !important;
+  width: 91.666667%;
+}
+
+.promoted + h1 {
+  font-weight: bold;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .promoted {
+    width: 83.333333%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .promoted {
+    width: 66.666667%;
+  }
+}

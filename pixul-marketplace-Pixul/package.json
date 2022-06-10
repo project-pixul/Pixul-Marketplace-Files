@@ -27,7 +27,7 @@
     "web3": "^1.6.0"
   },
   "scripts": {
-    "start": "start",
+    "start": "react-scripts start",
     "build": "build",
     "test": "test",
     "eject": "react-scripts eject"
@@ -51,8 +51,8 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^9",
-    "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "autoprefixer": "^9.8.8",
+    "postcss": "^7.0.39",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }

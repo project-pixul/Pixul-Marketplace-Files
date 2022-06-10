@@ -257,26 +257,6 @@ export const acceptedCryptos = [
     image:
       "https://logos-marcas.com/wp-content/uploads/2020/08/Bitcoin-Simbolo.png",
   },
-  {
-    id: 5,
-    image:
-      "https://logos-marcas.com/wp-content/uploads/2020/08/Bitcoin-Simbolo.png",
-  },
-  {
-    id: 6,
-    image:
-      "https://logos-marcas.com/wp-content/uploads/2020/08/Bitcoin-Simbolo.png",
-  },
-  {
-    id: 7,
-    image:
-      "https://logos-marcas.com/wp-content/uploads/2020/08/Bitcoin-Simbolo.png",
-  },
-  {
-    id: 8,
-    image:
-      "https://logos-marcas.com/wp-content/uploads/2020/08/Bitcoin-Simbolo.png",
-  },
 ];
 
 export const marketplaceImages = {

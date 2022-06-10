@@ -1,0 +1,27 @@
+.homePage {
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.homePage > .popular {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.homePage > .popular > div {
+  width: 91.666667%;
+  margin: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .homePage > .popular > div {
+    width: 83.333333%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .homePage > .popular > div {
+    width: 66.666667%;
+  }
+}
