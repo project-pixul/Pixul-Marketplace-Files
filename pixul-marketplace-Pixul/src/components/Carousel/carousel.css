@@ -1,0 +1,16 @@
+.carousel {
+  margin-top: 5rem;
+}
+
+.carousel > h1 {
+  font-size: 1rem;
+}
+
+.carousel > div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  gap: 1.25rem;
+  position: relative;
+}

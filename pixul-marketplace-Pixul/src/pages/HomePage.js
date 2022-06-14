@@ -16,18 +16,22 @@ import { fetchPopularServices } from "../utils/fetchPopularServices";
 import "./Pages.css";
 
 export const HomePage = () => {
-  const [creatorsCardsList /*creatorsCardsList */] = useState(creators);
+  const [creatorsCardsList, setCreatorsCardsList /*creatorsCardsList */] =
+    useState(creators);
   const [promotedCreatorInfo /* setPromotedCreatorInfo */] = useState(bci);
-  const [trendingCreators, setTrendingCreators] = useState(null);
+  const [tentrendingCreators, setTenTrendingCreators] = useState(null);
+  const [fivetrendingCreators, setFiveTrendingCreators] = useState(null);
+  const [moreTrend, setMoreTrend] = useState(false);
+  const [morePromote, setMorePromote] = useState(false);
   const [popularServices, setPopularServices] = useState(null);
   const bannerImages = bi;
 
-  const getTrendingCreators = async () => {
+  const getTrendingCreators = async num => {
     const trendingCreatorsQuery = query(
       collection(db, "users"),
       orderBy("stars", "desc"),
       orderBy("completedJobs", "desc"),
-      limit(10)
+      limit(num)
     );
     const trendingCreatorsDocs = await getDocs(trendingCreatorsQuery);
     const trendingCreatorData = [];
@@ -45,8 +49,11 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-    getTrendingCreators().then(trendingCreators =>
-      setTrendingCreators(trendingCreators)
+    getTrendingCreators(5).then(trendingCreators =>
+      setFiveTrendingCreators(trendingCreators)
+    );
+    getTrendingCreators(10).then(trendingCreators =>
+      setTenTrendingCreators(trendingCreators)
     );
 
     fetchPopularServices().then(trendingServices =>
@@ -54,22 +61,56 @@ export const HomePage = () => {
     );
   }, []);
 
+  const handleTrendingCreators = () => {
+    setMoreTrend(!moreTrend);
+  };
+
+  useEffect(() => {
+    function more() {
+      setCreatorsCardsList(creators);
+    }
+
+    function less() {
+      const testing = [...creatorsCardsList];
+      testing.length = 5;
+      setCreatorsCardsList(testing);
+    }
+
+    morePromote ? more() : less();
+  }, [morePromote]);
+
+  const handlePromoteCreators = () => {
+    setMorePromote(!morePromote);
+  };
+
+  console.log(morePromote);
   return (
     <div className="homePage">
       <HomeHeader popularServices={popularServices} />
       <HomeImages items={bannerImages} />
       <div className="popular">
-        {trendingCreators?.length ? (
-          <div>
+        <div>
+          <button onClick={handleTrendingCreators}>View More</button>
+          {moreTrend ? (
+            fivetrendingCreators?.length ? (
+              <Carousel
+                title="Trending Creators"
+                withArrows={false}
+                items={fivetrendingCreators}
+                itemType="image"
+              />
+            ) : null
+          ) : tentrendingCreators?.length ? (
             <Carousel
               title="Trending Creators"
               withArrows={false}
-              items={trendingCreators}
+              items={tentrendingCreators}
               itemType="image"
             />
-          </div>
-        ) : null}
-        {popularServices?.length ? (
+          ) : null}
+        </div>
+
+        {/* {popularServices?.length ? (
           <div>
             <Carousel
               title="Popular Service"
@@ -77,18 +118,19 @@ export const HomePage = () => {
               items={popularServices}
             />
           </div>
-        ) : null}
+        ) : null} */}
 
-        <Banner src="https://www.cronicavasca.com/uploads/s1/12/53/47/62/cryptocurrencies1600.jpeg" />
-        <PromotedCreators promotedCreatorInfo={promotedCreatorInfo} />
+        {/* <Banner src="https://www.cronicavasca.com/uploads/s1/12/53/47/62/cryptocurrencies1600.jpeg" /> */}
+        {/* <PromotedCreators promotedCreatorInfo={promotedCreatorInfo} /> */}
         <div>
+          <button onClick={handlePromoteCreators}>View More</button>
           <Carousel
             withArrows={false}
             items={creatorsCardsList}
             itemType="image"
           />
         </div>
-        <Banner src="https://www.cronicavasca.com/uploads/s1/12/53/47/62/cryptocurrencies1600.jpeg" />
+        {/* <Banner src="https://www.cronicavasca.com/uploads/s1/12/53/47/62/cryptocurrencies1600.jpeg" /> */}
       </div>
     </div>
   );

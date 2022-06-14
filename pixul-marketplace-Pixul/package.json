@@ -9,7 +9,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "antd": "^4.16.12",
+    "antd": "^4.21.0",
     "axios": "^0.21.1",
     "coingecko-api": "^1.0.10",
     "firebase": "^9.1.0",

@@ -6,22 +6,23 @@
 .homePage > .popular {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 2.5rem;
 }
 
 .homePage > .popular > div {
-  width: 91.666667%;
-  margin: auto;
+  padding-right: 5rem;
+  position: relative;
 }
 
-@media screen and (min-width: 1024px) {
-  .homePage > .popular > div {
-    width: 83.333333%;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .homePage > .popular > div {
-    width: 66.666667%;
-  }
+.popular > div > button {
+  right: 5rem;
+  position: absolute;
+  background: none;
+  border: none;
+  width: fit-content;
+  cursor: pointer;
+  top: 3.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
 }

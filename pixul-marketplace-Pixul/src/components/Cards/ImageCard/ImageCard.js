@@ -6,6 +6,8 @@ import Escrow from "../../Escrow/Escrow";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
 
+import "./cards.css";
+
 export const ImageCard = ({ creator, showEscrowOnClick = false }) => {
   const {
     profilePicture,
@@ -52,22 +54,14 @@ export const ImageCard = ({ creator, showEscrowOnClick = false }) => {
 
   return (
     <>
-      <div
-        onClick={onClick}
-        className="flex flex-col items-center cursor-pointer p-5 rounded border-2 min-w-min  w-48 border-gray-300 text-center h-60"
-      >
-        <Avatar src={profilePicture} size={100} />
+      <div onClick={onClick} className="image-card">
+        <Avatar src={profilePicture} size={80} className="image" />
         <Tooltip title={fullName}>
-          <h1 className=" mt-2 text-xl  w-32 text-center font-medium truncate">
-            {fullName}
-          </h1>
+          <h1 className="tooltip">{fullName}</h1>
         </Tooltip>
-        <h3 className="mb-5">
+        <p>
           {Array.isArray(services) && services.length > 0 ? services[0] : ""}
-        </h3>
-        <div className="flex justify-center gap-0.5 text-gray-300 text-xl">
-          <Stars stars={stars} />
-        </div>
+        </p>
       </div>
       {/*MODAL ESCROW */}
       <Escrow
