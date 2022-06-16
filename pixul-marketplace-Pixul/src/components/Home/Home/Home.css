@@ -1,3 +1,16 @@
+.content {
+  margin-top: 8rem;
+  background-image: url("./homepagedesign.webp");
+  background-size: 600px;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.content > p {
+  font-weight: 400;
+  opacity: 0.8;
+}
+
 .content .heading {
   position: relative;
 }
@@ -42,4 +55,7 @@
   color: white;
   background-color: #5100ff;
   text-decoration: none;
+}
+
+.homeImage {
 }

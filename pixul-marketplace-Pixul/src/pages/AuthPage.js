@@ -16,6 +16,8 @@ import "firebase/compat/firestore";
 import { services } from "../API";
 import ForgetPasword from "../components/AuthForm/ForgetPasword";
 
+import "./Pages.css";
+
 export const AuthPage = () => {
   const [isSigningIn, setisSigningIn] = useState(true);
   const [selectedServices, setSelectedServices] = useState([]);
@@ -133,13 +135,9 @@ export const AuthPage = () => {
   };
 
   return (
-    <div className="flex relative h-95-vh">
+    <div className="auth">
       {/* FORM SECTION */}
-      <div
-        className={`w-full md:w-1/2 lg:w-4/12 px-10 overflow-auto ${
-          isFillingStoredInformation ? "mt-5" : "mt-28"
-        }`}
-      >
+      <div className="form">
         {isFillingStoredInformation ? (
           <>
             <p className="text-gray-500 text-sm mb-2">
@@ -295,10 +293,9 @@ export const AuthPage = () => {
           </>
         ) : (
           <>
-            <h1 className="mb-1">WELCOME TO THE COLLECTIVE</h1>
-            <div className="flex gap-5 mb-5">
+            <div>
               <h1
-                className={`cursor-pointer text-3xl font-bold select-none ${
+                className={`${
                   isSigningIn ? "border-b-2 border-black" : "text-gray-300"
                 }`}
                 onClick={() => toggleSignInView(true)}
@@ -306,7 +303,7 @@ export const AuthPage = () => {
                 SIGN IN
               </h1>
               <h1
-                className={`cursor-pointer text-3xl font-bold select-none ${
+                className={`${
                   !isSigningIn ? "border-b-2 border-black" : "text-gray-300"
                 }`}
                 onClick={() => toggleSignInView(false)}

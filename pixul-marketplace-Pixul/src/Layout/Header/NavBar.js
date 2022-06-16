@@ -1,21 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "./header.css";
 const NavBar = ({ onClick = () => {} }) => {
   return (
-    <div className="flex flex-col gap-10 items-center text-xl font-bold md:flex-row md:text-sm md:gap-5">
+    <div className="nav">
       <Link onClick={onClick} to="/home">
-        HOME
+        Home
       </Link>
       <Link onClick={onClick} to="/marketplace">
-        MARKET PLACE
+        Categories
       </Link>
       <Link onClick={onClick} to="/marketplace">
-        POST JOB
+        Post Job
       </Link>
       <Link onClick={onClick} to="/marketplace">
-        CONTACT US
+        Contact Us
       </Link>
+      <Link to="/marketplace">Orders</Link>
     </div>
   );
 };

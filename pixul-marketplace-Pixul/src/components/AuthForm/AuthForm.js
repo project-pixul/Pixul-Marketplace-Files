@@ -1,6 +1,9 @@
 import { useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import { CaretRightOutlined, RightOutlined } from "@ant-design/icons";
 import { Form, Input, Button, Checkbox } from "antd";
+
 import { auth } from "../../firebase";
 import {
   signInWithEmailAndPassword,
@@ -10,7 +13,7 @@ import {
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
-import { useHistory } from "react-router-dom";
+
 import MetaMaskOnboarding from "@metamask/onboarding";
 import {
   createBasicUser,
@@ -18,6 +21,8 @@ import {
 } from "../../utils/verifyWalletUser";
 import Cookies from "universal-cookie";
 import { fetchUserInfo } from "../../utils/fetchUser";
+
+import "./auth.css";
 
 export const AuthForm = ({
   isSignIn,
@@ -143,7 +148,7 @@ export const AuthForm = ({
 
   return (
     <Form
-      className="flex flex-col text-gray-400"
+      className="form"
       layout="vertical"
       onFinish={submitAuthForm}
       validateMessages={{
@@ -155,12 +160,7 @@ export const AuthForm = ({
       {isSignIn ? (
         <>
           <Form.Item
-            label={
-              <label className="font-medium text-xs mb-1 text-gray-400">
-                USERNAME OR EMAIL
-              </label>
-            }
-            className=" outline-none border-b-4 text-black text-xl mb-5"
+            label={<label>Username or Email</label>}
             name="userEmail"
             rules={[
               {
@@ -169,16 +169,11 @@ export const AuthForm = ({
               },
             ]}
           >
-            <Input bordered={false} className="p-0 text-xl" />
+            <Input bordered={false} />
           </Form.Item>
 
           <Form.Item
-            label={
-              <label className="font-medium text-xs mb-1 text-gray-400">
-                PASSWORD
-              </label>
-            }
-            className="outline-none border-b-4 text-black text-xl mb-5"
+            label={<label>Password</label>}
             name="password"
             rules={[
               {
@@ -187,7 +182,7 @@ export const AuthForm = ({
               },
             ]}
           >
-            <Input.Password bordered={false} className="p-0 text-xl" />
+            <Input.Password bordered={false} />
           </Form.Item>
         </>
       ) : (
@@ -277,13 +272,9 @@ export const AuthForm = ({
       <div className={`flex justify-${isSignIn ? "between" : "end"}`}>
         {isSignIn && (
           <div className="flex items-center gap-2">
-            <Form.Item
-              className="m-0"
-              name="rememberMe"
-              valuePropName="checked"
-            >
-              <Checkbox bordered={false} className="m-0">
-                REMEMBER ME
+            <Form.Item name="rememberMe" valuePropName="checked">
+              <Checkbox bordered={false} className="rememberMe">
+                Remember Me
               </Checkbox>
             </Form.Item>
           </div>

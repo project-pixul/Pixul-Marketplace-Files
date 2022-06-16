@@ -1,0 +1,49 @@
+.footer {
+  width: 100%;
+  background-color: #1a1a24;
+  padding: 10% 20% 10% 20%;
+  /* trbl */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer > div:first-of-type {
+  width: 25%;
+}
+
+.footer > div:first-of-type p {
+  opacity: 0.5;
+  font-size: 0.7rem;
+  margin-top: 0.7rem;
+}
+
+.footer > div:first-of-type div svg {
+  margin-right: 1.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  opacity: 0.5;
+}
+
+.footer > div:last-of-type {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer .categories {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .categories a {
+  opacity: 0.7;
+  margin-top: 0.5rem;
+  color: white;
+}
+
+.footer > div > img {
+  height: 40px;
+  width: 100px;
+}

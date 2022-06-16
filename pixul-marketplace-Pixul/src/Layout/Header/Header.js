@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { MenuOutlined } from "@ant-design/icons";
+import { DownOutlined } from "@ant-design/icons";
 import { Drawer } from "antd";
 import { useEffect } from "react";
 import NavBar from "./NavBar";
@@ -13,6 +13,7 @@ import { useHistory } from "react-router-dom";
 
 import logo from "../../assets/img/logo.png";
 
+import "./header.css";
 export const Header = () => {
   const [togleMenu, setTogleMenu] = useState(false);
   const [walletAddress, setWallet] = useState("");
@@ -76,30 +77,26 @@ export const Header = () => {
   };
 
   return (
-    <header className="w-full bg-gray-100">
-      <div className="flex items-center justify-between py-3 px-5 md:px-10">
+    <header className="header">
+      <div>
         {/* LOGO SECTION */}
-        {/* <div
-          onClick={() => {
-            history.push("/home");
-          }}
-          className="flex items-center gap-2 cursor-pointer"
-        >
-          <img src={logo} alt="logo" className="w-10 h-10" />
-          <span className="hidden lg:flex text-lg tracking-wide">
-            THE COLLECTIVE
-          </span>
-        </div> */}
+        <div className="logo">
+          <a href="/home">
+            <img src={logo} alt="logo" />
+          </a>
+          <div>
+            <input type="text" placeholder="Search Services" />
+            <button>Search</button>
+          </div>
+        </div>
 
         {/* PRINCIPAL CONTAINER */}
-        <div className="flex items-center gap-5">
+        <div className="others">
           {/* MENU */}
-          {/* <div className="hidden md:flex">
-            <NavBar />
-          </div> */}
+          <NavBar />
 
           {/* WALLET */}
-          {/* <button id="walletButton" onClick={connectWalletPressed}>
+          <button id="walletButton" onClick={connectWalletPressed}>
             {walletAddress.length > 0 ? (
               "Connected: " +
               String(walletAddress).substring(0, 6) +
@@ -108,22 +105,19 @@ export const Header = () => {
             ) : (
               <span>Connect Wallet</span>
             )}
-          </button> */}
+          </button>
 
           {/* USER PROFILE */}
           {authState?.isLoggedIn ? <MarketPlaceUser /> : null}
 
           {/* MOBILE MENU TRIGGER */}
-          {/* <MenuOutlined
-            onClick={openMenu}
-            className="md:hidden text-2xl mb-1"
-          /> */}
+          <DownOutlined onClick={openMenu} className="menu" />
         </div>
       </div>
 
       {/* MOBILE MENU */}
       <Drawer
-        title="The collective coin"
+        title="Pixual"
         placement={"top"}
         closable={true}
         onClose={closeMenu}

@@ -1,0 +1,38 @@
+/* Auth Form */
+.form label,
+.form input,
+.form svg {
+  color: white;
+}
+
+.form label {
+  font-weight: 600;
+}
+
+.form .rememberMe {
+  margin-top: -3rem;
+}
+
+.form .rememberMe span {
+  opacity: 0.7 !important;
+}
+
+.form .rememberMe span:last-of-type {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.form .ant-checkbox-inner {
+  background-color: transparent !important;
+}
+
+.form .ant-input {
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  width: 300px !important;
+  height: 30px !important;
+  padding-left: 10px !important;
+}
+
+.form .ant-input-affix-wrapper {
+  padding: 0 !important;
+}

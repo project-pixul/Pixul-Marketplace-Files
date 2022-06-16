@@ -1,6 +1,8 @@
+/* Home Page */
 .homePage {
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
+  padding-left: 10%;
 }
 
 .homePage > .popular {
@@ -25,4 +27,15 @@
   top: 3.5rem;
   font-size: 0.7rem;
   font-weight: 600;
+}
+
+.promotedCards {
+  margin-top: -5rem;
+}
+
+/* Auth Page */
+.auth {
+  color: white;
+  display: grid;
+  place-items: center;
 }

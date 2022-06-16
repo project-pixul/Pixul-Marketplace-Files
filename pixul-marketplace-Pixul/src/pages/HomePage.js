@@ -66,22 +66,8 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-    function more() {
-      setCreatorsCardsList(creators);
-    }
-
-    function less() {
-      const testing = [...creatorsCardsList];
-      testing.length = 5;
-      setCreatorsCardsList(testing);
-    }
-
-    morePromote ? more() : less();
-  }, [morePromote]);
-
-  const handlePromoteCreators = () => {
-    setMorePromote(!morePromote);
-  };
+    creatorsCardsList.length = 5;
+  }, [creatorsCardsList]);
 
   console.log(morePromote);
   return (
@@ -110,27 +96,26 @@ export const HomePage = () => {
           ) : null}
         </div>
 
-        {/* {popularServices?.length ? (
+        {popularServices?.length ? (
           <div>
+            <button onClick={handleTrendingCreators}>View More</button>
+
             <Carousel
               title="Popular Service"
               withArrows={false}
               items={popularServices}
             />
           </div>
-        ) : null} */}
+        ) : null}
 
-        {/* <Banner src="https://www.cronicavasca.com/uploads/s1/12/53/47/62/cryptocurrencies1600.jpeg" /> */}
-        {/* <PromotedCreators promotedCreatorInfo={promotedCreatorInfo} /> */}
-        <div>
-          <button onClick={handlePromoteCreators}>View More</button>
+        <PromotedCreators promotedCreatorInfo={promotedCreatorInfo} />
+        <div className="promotedCards">
           <Carousel
             withArrows={false}
             items={creatorsCardsList}
             itemType="image"
           />
         </div>
-        {/* <Banner src="https://www.cronicavasca.com/uploads/s1/12/53/47/62/cryptocurrencies1600.jpeg" /> */}
       </div>
     </div>
   );

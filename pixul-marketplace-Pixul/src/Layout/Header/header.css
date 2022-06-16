@@ -1,0 +1,80 @@
+.header > div:first-of-type {
+  padding: 1rem 1.5rem 1rem 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+}
+
+.header .logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo div {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  padding-left: 1rem;
+}
+
+.header .logo div input {
+  padding-left: 10px;
+  height: 22px;
+  background-color: transparent;
+  border: 1px solid gray;
+  outline: none;
+}
+
+.header .logo div button {
+  height: 22px;
+  background-color: #3e00c5;
+  border: none;
+  cursor: pointer;
+}
+
+.header .logo > a > img {
+  height: 20px;
+  width: 60px;
+}
+
+.header .others {
+  display: flex;
+  align-items: center;
+}
+
+.header .others #walletButton {
+  background-color: #3e00c5;
+  border-radius: 10px;
+  border: none;
+  margin-left: 10px;
+  font-size: 0.8rem;
+  height: 25px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.header .menu svg {
+  height: 15px;
+  width: 15px;
+  margin-left: 10px;
+}
+
+.header .nav {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav a {
+  color: white;
+}
+
+.nav a:active,
+.nav a:hover {
+  color: #3e00c5;
+}
+
+@media screen and (max-width: 1028px) {
+}

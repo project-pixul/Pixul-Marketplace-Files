@@ -1,23 +1,40 @@
-.promoted {
-  margin: 0 !important;
-  width: 91.666667%;
-}
-
-.promoted + h1 {
-  font-weight: bold;
-  font-size: 1.875rem;
+.promoted > h2 {
+  font-size: 1rem;
   line-height: 2.25rem;
-  margin-bottom: 1.25rem;
 }
 
-@media screen and (min-width: 1024px) {
-  .promoted {
-    width: 83.333333%;
-  }
+.promoted > div {
+  display: flex;
+  justify-content: space-between;
+  background-color: #191923;
+  border-radius: 5px 0 0 5px;
 }
 
-@media screen and (min-width: 1280px) {
-  .promoted {
-    width: 66.666667%;
-  }
+.promoted .creator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 2rem 1.5rem 3.5rem;
+}
+
+.promoted .creator > div h2 {
+  margin-top: -1rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.promoted .creator p {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.promoted .creator > button {
+  background-color: #5100ff;
+  border: none;
+  width: 8rem;
+  height: 2.5rem;
+}
+
+.promoted > div > img {
+  width: 50%;
 }
