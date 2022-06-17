@@ -57,5 +57,8 @@
   text-decoration: none;
 }
 
-.homeImage {
+@media screen and (max-width: 650px) {
+  .content .heading > h1 {
+    font-size: clamp(1rem, 10vw, 3rem);
+  }
 }

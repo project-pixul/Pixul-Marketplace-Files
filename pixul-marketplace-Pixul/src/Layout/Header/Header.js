@@ -111,7 +111,7 @@ export const Header = () => {
           {authState?.isLoggedIn ? <MarketPlaceUser /> : null}
 
           {/* MOBILE MENU TRIGGER */}
-          <DownOutlined onClick={openMenu} className="menu" />
+          <DownOutlined onClick={openMenu} className="menu small" />
         </div>
       </div>
 
@@ -123,8 +123,8 @@ export const Header = () => {
         onClose={closeMenu}
         visible={togleMenu}
         key={"var-nav"}
-        className="md:hidden"
-        height="90%"
+        className="small"
+        height="100%"
       >
         <NavBar onClick={closeMenu} />
       </Drawer>

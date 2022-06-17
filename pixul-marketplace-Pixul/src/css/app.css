@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 @import "~antd/dist/antd.css";
+
+:root {
+  --width: 300px;
+}

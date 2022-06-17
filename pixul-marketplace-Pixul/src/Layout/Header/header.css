@@ -76,5 +76,22 @@
   color: #3e00c5;
 }
 
-@media screen and (max-width: 1028px) {
+.small {
+  display: none !important;
+}
+
+@media screen and (max-width: 950px) {
+  .big {
+    display: none !important;
+  }
+  .small {
+    display: inline-block !important;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header > div:first-of-type {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

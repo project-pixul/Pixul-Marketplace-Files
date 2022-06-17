@@ -1,9 +1,10 @@
 .footer {
   width: 100%;
   background-color: #1a1a24;
-  padding: 10% 20% 10% 20%;
+  padding: 5% 10% 5% 10%;
   /* trbl */
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -18,6 +19,11 @@
   margin-top: 0.7rem;
 }
 
+.footer > div:first-of-type > div a {
+  text-decoration: none;
+  color: white;
+}
+
 .footer > div:first-of-type div svg {
   margin-right: 1.5rem;
   height: 1.5rem;
@@ -28,6 +34,7 @@
 .footer > div:last-of-type {
   width: 60%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
 }

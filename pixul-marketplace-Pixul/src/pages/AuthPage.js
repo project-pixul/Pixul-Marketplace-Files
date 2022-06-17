@@ -1,6 +1,6 @@
 import { useState, useRef, useContext, useEffect } from "react";
 import { Select, Form, Input } from "antd";
-import { CaretRightOutlined, RightOutlined } from "@ant-design/icons";
+import { RightOutlined } from "@ant-design/icons";
 import { AuthForm } from "../components/AuthForm/AuthForm";
 import MetaMaskOnboarding from "@metamask/onboarding";
 import AuthContext from "../components/AuthForm/AuthContext";
@@ -140,33 +140,18 @@ export const AuthPage = () => {
       <div className="form">
         {isFillingStoredInformation ? (
           <>
-            <p className="text-gray-500 text-sm mb-2">
+            <p>
               Thanks for creating your Creator account, now it's time to add
               information to your store.
             </p>
 
-            <h1 className="text-3xl font-bold border-b-2 border-black mb-4">
-              Store Information
-            </h1>
+            <h1>Store Information</h1>
 
             {/* STORE INFORMATION FORM */}
-            <Form
-              form={form}
-              className="flex flex-col text-gray-400"
-              layout="vertical"
-              onFinish={handleSubmitForm}
-            >
+            <Form form={form} layout="vertical" onFinish={handleSubmitForm}>
               {/* NAME */}
               <Form.Item
-                label={
-                  <label
-                    style={{ paddingBottom: 0 }}
-                    className="font-medium text-xs text-gray-400 py-0"
-                  >
-                    Store Name
-                  </label>
-                }
-                className="outline-none border-b-4 text-black mb-5 p-0"
+                label={<label style={{ paddingBottom: 0 }}>Store Name</label>}
                 name="name"
                 rules={[
                   { required: true, message: "Please input your Store Name!" },
@@ -177,14 +162,8 @@ export const AuthPage = () => {
               {/* PROFILE PICTURE */}
               <Form.Item
                 label={
-                  <label
-                    style={{ paddingBottom: 0 }}
-                    className="font-medium text-xs text-gray-400 py-0"
-                  >
-                    Profile Picture
-                  </label>
+                  <label style={{ paddingBottom: 0 }}>Profile Picture</label>
                 }
-                className="outline-none border-b-4 text-black mb-5 p-0"
                 name="profilePicture"
                 rules={[
                   {
@@ -200,17 +179,11 @@ export const AuthPage = () => {
 
               {/* SERVICES */}
               <Form.Item>
-                <label
-                  htmlFor="services"
-                  className="font-medium text-gray-400 text-xs mb-1"
-                >
-                  Services
-                </label>
+                <label htmlFor="services">Services</label>
                 <Select
                   id="services"
                   mode="multiple"
                   allowClear
-                  className="outline-none border-4 text-black  mb-5"
                   bordered={false}
                   placeholder="Select your services"
                   onDeselect={handleOnDeselect}
@@ -228,14 +201,8 @@ export const AuthPage = () => {
               {/* PORTTFOLIO */}
               <Form.Item
                 label={
-                  <label
-                    style={{ paddingBottom: 0 }}
-                    className="font-medium text-xs text-gray-400 py-0"
-                  >
-                    Porttfolio Link
-                  </label>
+                  <label style={{ paddingBottom: 0 }}>Porttfolio Link</label>
                 }
-                className="outline-none border-b-4 text-black mb-5 p-0"
                 name="porttfolio"
                 rules={[
                   {
@@ -251,14 +218,8 @@ export const AuthPage = () => {
               {/* LOCATION */}
               <Form.Item
                 label={
-                  <label
-                    style={{ paddingBottom: 0 }}
-                    className="font-medium text-xs text-gray-400 py-0"
-                  >
-                    Your location
-                  </label>
+                  <label style={{ paddingBottom: 0 }}>Your location</label>
                 }
-                className="outline-none border-b-4 text-black mb-5 p-0"
                 name="location"
               >
                 <Input bordered={false} className="p-1 text-xl" />
@@ -293,23 +254,24 @@ export const AuthPage = () => {
           </>
         ) : (
           <>
-            <div>
+            <div className="heading">
               <h1
-                className={`${
-                  isSigningIn ? "border-b-2 border-black" : "text-gray-300"
-                }`}
+                style={{
+                  color: !isSigningIn ? "rgba(255, 255, 255, 0.5)" : "white",
+                }}
                 onClick={() => toggleSignInView(true)}
               >
-                SIGN IN
+                Sign In
               </h1>
               <h1
-                className={`${
-                  !isSigningIn ? "border-b-2 border-black" : "text-gray-300"
-                }`}
+                style={{
+                  color: isSigningIn ? "rgba(255, 255, 255, 0.5)" : "white",
+                }}
                 onClick={() => toggleSignInView(false)}
               >
-                SIGN UP
+                Sign Up
               </h1>
+              <div className="block"></div>
             </div>
             <AuthForm
               isSignIn={isSigningIn}
@@ -319,23 +281,17 @@ export const AuthPage = () => {
               setAuthStateContext={setAuthState}
             />
             {isSigningIn && (
-              <div className="text-center flex gap-5 flex-col ">
+              <div className="sign-in">
                 <label
-                  className="mt-5 text-center block text-gray-300 font-bold"
                   onClick={() => {
                     setVisibleForgetPasssword(true);
                   }}
                 >
-                  Forget your password?{" "}
-                  <span className="border-b-2 cursor-pointer">Click Here</span>
+                  Forget your password? <span>Click Here</span>
                 </label>
-                <p className="text-gray-500 font-bold">or</p>
-                <button
-                  className="flex items-center m-auto bg-gray-200 border-2 border-gray-500 rounded-full px-2 py-1"
-                  onClick={walletAuth}
-                >
-                  <p className="text-xs font-bold">SIGN IN WITH YOUR WALLET</p>
-                  <CaretRightOutlined />
+                <p>or</p>
+                <button onClick={walletAuth} className="sign-in-wallet">
+                  <span>Sign In With Your Wallet</span>
                 </button>
               </div>
             )}
@@ -344,7 +300,7 @@ export const AuthPage = () => {
       </div>
 
       {/* IMAGE SECTION */}
-      <div
+      {/* <div
         className="relative bg-cover bg-center h-full flex-1 hidden md:block"
         style={{
           backgroundImage: `linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5)), url("https://www.teahub.io/photos/full/2-22965_wallpaper-of-bitcoin-coin-money-technology-background-imagenes.jpg")`,
@@ -365,7 +321,7 @@ export const AuthPage = () => {
             <label className="text-gray-300">Designer Name</label>
           </div>
         </div>
-      </div>
+      </div> */}
       <ForgetPasword
         visible={visibleForgetPasssword}
         handleVisible={setVisibleForgetPasssword}

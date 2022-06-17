@@ -19,27 +19,35 @@ export const Footer = () => {
         </p>
         <div>
           <MediumOutlined />
-          <TwitterOutlined />
-          <GithubOutlined />
+          <a href="https://twitter.com/Pixul_">
+            <TwitterOutlined />
+          </a>
+          <a href="https://github.com/project-pixul/Pixul-Ecosystem">
+            <GithubOutlined />
+          </a>
         </div>
       </div>
       <div>
         <div>
           <h2>Ecosystem</h2>
           <div className="categories">
-            <Link to="/">Marketplace</Link>
-            <Link to="/">Staking</Link>
-            <Link to="/">Farms</Link>
-            <Link to="/">DEX</Link>
+            <a href="/home">Marketplace</a>
+            <a href="https://pixul.app/xpixul#staking">Staking</a>
+            <a href="https://pixul.app/farm">Farms</a>
+            <a href="https://www.pixul.io/">DEX</a>
           </div>
         </div>
         <div>
           <h2>Documents</h2>
           <div className="categories">
-            <Link to="/">Whitepaper</Link>
-            <Link to="/">Roadmap</Link>
-            <Link to="/">Transparency</Link>
-            <Link to="/">Audits</Link>
+            <a href="https://www.pixul.io/_files/ugd/31aeaa_211f1a6c68774e909ec9d35d07db2d6f.pdf">
+              Whitepaper
+            </a>
+            <a href="https://www.pixul.io/roadmap">Roadmap</a>
+            <a href="https://www.pixul.io/transparency">Transparency</a>
+            <a href="https://github.com/solidproof/projects/blob/main/Pixul/SmartContract_Audit_Solidproof_PixulToken.pdf">
+              Audits
+            </a>
           </div>
         </div>
         <div>

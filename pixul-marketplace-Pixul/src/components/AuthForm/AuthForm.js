@@ -188,12 +188,7 @@ export const AuthForm = ({
       ) : (
         <>
           <Form.Item
-            label={
-              <label className="font-medium text-xs mb-1 text-gray-400">
-                FULL NAME
-              </label>
-            }
-            className=" outline-none border-b-4 text-black text-xl mb-5"
+            label={<label>Full Name</label>}
             name="fullName"
             rules={[
               {
@@ -202,16 +197,11 @@ export const AuthForm = ({
               },
             ]}
           >
-            <Input bordered={false} className="p-0 text-xl" />
+            <Input bordered={false} />
           </Form.Item>
 
           <Form.Item
-            label={
-              <label className="font-medium text-xs mb-1 text-gray-400">
-                USERNAME
-              </label>
-            }
-            className=" outline-none border-b-4 text-black text-xl mb-5"
+            label={<label>Username</label>}
             name="userName"
             rules={[
               {
@@ -220,16 +210,11 @@ export const AuthForm = ({
               },
             ]}
           >
-            <Input bordered={false} className="p-0 text-xl" />
+            <Input bordered={false} />
           </Form.Item>
 
           <Form.Item
-            label={
-              <label className="font-medium text-xs mb-1 text-gray-400">
-                EMAIL
-              </label>
-            }
-            className=" outline-none border-b-4 text-black text-xl mb-5"
+            label={<label>Email</label>}
             name="userEmail"
             rules={[
               {
@@ -241,16 +226,11 @@ export const AuthForm = ({
               },
             ]}
           >
-            <Input bordered={false} className="p-0 text-xl" />
+            <Input bordered={false} />
           </Form.Item>
 
           <Form.Item
-            label={
-              <label className="font-medium text-xs mb-1 text-gray-400">
-                PASSWORD
-              </label>
-            }
-            className="outline-none border-b-4 text-black text-xl mb-5"
+            label={<label>Password</label>}
             name="password"
             rules={[
               {
@@ -259,47 +239,41 @@ export const AuthForm = ({
               },
             ]}
           >
-            <Input.Password
-              visibilityToggle={false}
-              bordered={false}
-              className="p-0 text-xl"
-            />
+            <Input.Password visibilityToggle={false} bordered={false} />
           </Form.Item>
           {error ? <p>{error.replace("Firebase: ", "")}</p> : null}
         </>
       )}
 
-      <div className={`flex justify-${isSignIn ? "between" : "end"}`}>
+      <div
+        className="options"
+        style={{ justifyContent: `${isSignIn ? "space-between" : "end"}` }}
+      >
         {isSignIn && (
-          <div className="flex items-center gap-2">
-            <Form.Item name="rememberMe" valuePropName="checked">
-              <Checkbox bordered={false} className="rememberMe">
-                Remember Me
-              </Checkbox>
+          <div>
+            <Form.Item
+              name="rememberMe"
+              className="rememberMe"
+              valuePropName="checked"
+            >
+              <Checkbox bordered={false}>Remember Me</Checkbox>
             </Form.Item>
           </div>
         )}
-        <div className="bg-gray-400 rounded-2xl">
-          <Button
-            type="text"
-            htmlType="submit"
-            className="flex items-center justify-end gap-1 w-36 rounded-2xl"
-          >
-            <span className="text-gray-900 text-xs font-bold">
-              {isSignIn ? "ENTER" : "JOIN"} TCC
-            </span>
-            <RightOutlined className="text-gray-900 text-center text-xs" />
+        <div className="">
+          <Button type="text" htmlType="submit" className="join-enter">
+            <span>{isSignIn ? "Enter" : "Join"} Pixul</span>
+            <RightOutlined />
           </Button>
         </div>
         {isSignIn ? null : (
           <Button
             type="text"
             htmlType="submit"
-            className="flex items-center m-auto bg-gray-200 border-2 border-gray-500 rounded-full px-2 py-1 ml-2"
             onClick={() => setWalletSignUp(true)}
+            className="sign-in-wallet"
           >
-            <p className="text-xs font-bold">SIGN UP WITH YOUR WALLET</p>
-            <CaretRightOutlined />
+            <span>Sign up with your wallet</span>
           </Button>
         )}
       </div>

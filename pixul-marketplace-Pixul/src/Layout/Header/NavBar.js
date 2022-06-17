@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./header.css";
 const NavBar = ({ onClick = () => {} }) => {
   return (
-    <div className="nav">
+    <div className="nav big">
       <Link onClick={onClick} to="/home">
         Home
       </Link>

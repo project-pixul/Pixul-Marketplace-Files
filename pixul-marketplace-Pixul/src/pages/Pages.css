@@ -38,4 +38,70 @@
   color: white;
   display: grid;
   place-items: center;
+  margin: 4rem 0 4rem 0;
+}
+
+.auth .sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth .sign-in > label {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.auth .sign-in > label,
+.auth .sign-in > p {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.auth .sign-in > label > span {
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.auth .sign-in .sign-in-wallet,
+.options .sign-in-wallet,
+.options .sign-in-wallet:hover {
+  color: white;
+  display: grid;
+  place-items: center;
+  background-color: #5100ff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.auth .sign-in .sign-in-wallet {
+  width: calc(var(--width) - 30px);
+  height: 40px;
+}
+
+.auth .heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.auth .heading > h1 {
+  font-weight: bolder;
+  cursor: pointer;
+  transition: color 200ms ease-in;
+}
+
+.auth .heading .block {
+  position: absolute;
+  height: 5rem;
+  width: 2rem;
+  background-color: #5100ff;
+  z-index: -1;
+  top: -10px;
+  left: -15px;
 }
