@@ -61,4 +61,20 @@
   .content .heading > h1 {
     font-size: clamp(1rem, 10vw, 3rem);
   }
+
+  .content .heading .block {
+    height: 130%;
+  }
+}
+
+@media screen and (max-width: 1124px) {
+  .content {
+    background-size: 50%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .content {
+    background: none;
+  }
 }

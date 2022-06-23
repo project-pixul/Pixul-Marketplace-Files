@@ -20,11 +20,11 @@
 .promoted .creator > div h2 {
   margin-top: -1rem;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: clamp(0.5rem + 1vw, 1rem + 1vh, 1.5rem + 1vh);
 }
 
 .promoted .creator p {
-  font-size: 0.9rem;
+  font-size: clamp(0.2 + 1vw, 0.5 + 1vw, 0.9 + 1vw);
   font-weight: 300;
 }
 
@@ -37,4 +37,50 @@
 
 .promoted > div > img {
   width: 50%;
+  height: var(--img-height);
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --img-height: 50vw;
+  }
+
+  .promoted > div {
+    flex-direction: column-reverse;
+  }
+
+  .promoted > div > img {
+    width: 100%;
+  }
+
+  .promoted .creator {
+    padding-left: 2rem;
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1070px) {
+  :root {
+    --img-height: 50vw !important;
+  }
+  .promoted > div {
+    flex-direction: column-reverse;
+  }
+
+  .promoted > div > img {
+    width: 100%;
+  }
+
+  .promoted .creator {
+    padding-left: 2rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  :root {
+    --img-height: 20vw !important;
+  }
+
+  .promoted > div > img {
+    width: calc(var(--img-height) + 40vh);
+  }
 }

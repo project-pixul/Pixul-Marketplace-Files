@@ -11,6 +11,7 @@
 
 .footer > div:first-of-type {
   width: 25%;
+  margin-right: 5rem;
 }
 
 .footer > div:first-of-type p {
@@ -39,6 +40,11 @@
   justify-content: space-between;
 }
 
+.footer > div:last-of-type > div {
+  margin-top: 1.5rem;
+  margin-right: 3rem;
+}
+
 .footer .categories {
   display: flex;
   flex-direction: column;
@@ -53,4 +59,14 @@
 .footer > div > img {
   height: 40px;
   width: 100px;
+}
+
+@media screen and (max-width: 638px) {
+  .footer {
+    justify-content: center;
+  }
+
+  .footer > div:first-of-type {
+    margin-right: 1rem;
+  }
 }
