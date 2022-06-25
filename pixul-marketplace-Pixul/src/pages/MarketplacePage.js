@@ -28,22 +28,28 @@ export const MarketplacePage = () => {
     <setMessagesDocRefContext.Provider
       value={{ setMessagesDocRef, messagesDocRef }}
     >
-      <div className="grid marketplace-container mx-auto my-5 w-11/12">
-        <h1 className="text-center mb-5 lg:mb-0 lg:text-left lg:block text-2xl self-center font-extrabold ">
-          THE MARKETPLACE
-        </h1>
-        <div className="flex items-center justify-between flex-1 sm:flex">
-          <MarketPlaceFilter setCreators={setCreators} />
+      <div className="marketplace">
+        <div className="marketplace-header">
+          <div>
+            <div className="block"></div>
+            <h1>Marketplace</h1>
+          </div>
+          <div>
+            <MarketPlaceFilter setCreators={setCreators} />
+          </div>
         </div>
-        <Sidebar onClick={setSelectedService} />
-        <div>
-          {creators.length ? <CategoriesImages creators={creators} /> : null}
-          <div className="md:pr-10">
-            <MultiLineCardContainer
-              creators={creators}
-              title="Creators"
-              setMessagesDocRef={setMessagesDocRef}
-            />
+
+        <div className="marketplace-content">
+          <Sidebar onClick={setSelectedService} />
+          <div>
+            {creators.length ? <CategoriesImages creators={creators} /> : null}
+            <div>
+              <MultiLineCardContainer
+                creators={creators}
+                title="Creators"
+                setMessagesDocRef={setMessagesDocRef}
+              />
+            </div>
           </div>
         </div>
         {authState?.isLoggedIn ? (

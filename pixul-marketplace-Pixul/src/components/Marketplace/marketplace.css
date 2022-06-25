@@ -1,0 +1,83 @@
+/* Side Bar */
+
+.marketplace-sidebar .marketplace-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.marketplace-sidebar .marketplace-nav > button,
+.marketplace-sidebar .markeplace-nav > button:hover {
+  color: rgba(255, 255, 255, 0.593);
+}
+
+.marketplace-sidebar .marketplace-nav > button {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  font-size: calc(0.5rem + 1vh);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.marketplace-sidebar > div > h1 {
+  font-size: calc(1.2rem + 1vh);
+}
+
+/* SECTION: HEADER */
+
+.marketplace .marketplace-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Search Bar */
+
+.marketplace-search {
+  display: flex;
+  margin-top: 10vh !important;
+}
+
+.marketplace-search input,
+.marketplace-search input:hover,
+.marketplace-search input.ant-input-borderless {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 30px;
+  width: calc(10rem + 20vw);
+  border-radius: 0px;
+  color: white;
+  padding-left: 30px;
+}
+
+.marketplace-search input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.marketplace-search button {
+  height: 31px;
+  width: 5rem;
+  border: none;
+  background-color: #5100ff;
+  color: white;
+  cursor: pointer;
+}
+
+.marketplace-search .ant-form-item-control-input-content {
+  position: relative;
+}
+
+.marketplace-search .search-icon {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.3);
+  left: 10px;
+  top: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .marketplace .marketplace-header {
+    flex-direction: column;
+  }
+
+  .marketplace-search {
+    margin-top: 5vh !important;
+  }
+}

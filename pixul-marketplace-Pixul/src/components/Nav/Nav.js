@@ -1,12 +1,12 @@
 import { Button } from "antd";
+
 export const Nav = ({ items, onClick }) => {
   return (
-    <nav className="flex flex-col">
+    <nav className="marketplace-nav">
       {items.map(item => (
         <Button
           key={item}
           type="text"
-          className="h-10 mr-5 cursor-pointer flex justify-start"
           onClick={() => {
             onClick(item);
           }}
