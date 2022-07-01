@@ -7,4 +7,10 @@
 :root {
   --width: 300px;
   --img-height: 300px;
+  --primary-color: #0c0b18;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: white;
 }
