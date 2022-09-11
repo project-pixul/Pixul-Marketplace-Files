@@ -1,8 +1,10 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "~antd/dist/antd.css";
+@import "~antd/dist/antd.css"; */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
 
 :root {
   --width: 300px;
@@ -10,7 +12,13 @@
   --primary-color: #0c0b18;
 }
 
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
 body {
+  font-size: 1em !important;
   background-color: var(--primary-color);
   color: white;
 }
