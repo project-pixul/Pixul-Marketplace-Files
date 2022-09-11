@@ -6,7 +6,7 @@ import Escrow from "../../Escrow/Escrow";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
 
-import "./cards.css";
+import "./cards.scss";
 
 export const ImageCard = ({ creator, showEscrowOnClick = false }) => {
   const {
@@ -20,51 +20,49 @@ export const ImageCard = ({ creator, showEscrowOnClick = false }) => {
     status,
   } = creator;
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentEscrow, setCurrentEscrow] = useState({});
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [currentEscrow, setCurrentEscrow] = useState({});
 
-  const history = useHistory();
+  // const history = useHistory();
 
-  const onClick = () => {
-    if (showEscrowOnClick) {
-      handleGetEscrowInfo(chatId, messageId);
-      setIsModalOpen(true);
-    } else {
-      history.push("/profile/" + user_id);
-    }
-  };
+  // const onClick = () => {
+  //   if (showEscrowOnClick) {
+  //     handleGetEscrowInfo(chatId, messageId);
+  //     setIsModalOpen(true);
+  //   } else {
+  //     history.push("/profile/" + user_id);
+  //   }
+  // };
 
-  const handleGetEscrowInfo = async (chatId, messageId) => {
-    const messageWithEscrow = doc(db, "chats", chatId, "messages", messageId);
-    const messageDoc = await getDoc(messageWithEscrow);
+  // const handleGetEscrowInfo = async (chatId, messageId) => {
+  //   const messageWithEscrow = doc(db, "chats", chatId, "messages", messageId);
+  //   const messageDoc = await getDoc(messageWithEscrow);
 
-    if (!messageDoc.exists()) {
-      message.error("Error getting Job");
-      setIsModalOpen(false);
-      return;
-    }
+  //   if (!messageDoc.exists()) {
+  //     message.error("Error getting Job");
+  //     setIsModalOpen(false);
+  //     return;
+  //   }
 
-    let escrow = messageDoc.data().escrow;
-    escrow.sendersId = messageDoc.data().sendersId;
-    escrow.escrowId = messageDoc.data().escrowId;
-    escrow.status = status;
+  //   let escrow = messageDoc.data().escrow;
+  //   escrow.sendersId = messageDoc.data().sendersId;
+  //   escrow.escrowId = messageDoc.data().escrowId;
+  //   escrow.status = status;
 
-    setCurrentEscrow(escrow);
-  };
+  //   setCurrentEscrow(escrow);
+  // };
 
   return (
     <>
-      <div onClick={onClick} className="image-card">
-        <Avatar src={profilePicture} size={80} className="image" />
-        <Tooltip title={fullName}>
-          <h1 className="tooltip">{fullName}</h1>
-        </Tooltip>
-        <p>
+      <div className="image-card">
+        <img src={profilePicture} className="image" alt="profileimage" />
+        <span className="uid">{creator.userName}</span>
+        <span className="service">
           {Array.isArray(services) && services.length > 0 ? services[0] : ""}
-        </p>
+        </span>
       </div>
       {/*MODAL ESCROW */}
-      <Escrow
+      {/* <Escrow
         isModalOpen={isModalOpen}
         closeModal={setIsModalOpen}
         isCheckout={false}
@@ -73,7 +71,7 @@ export const ImageCard = ({ creator, showEscrowOnClick = false }) => {
         escrowId={currentEscrow.escrowId}
         chatId={chatId}
         messageId={messageId}
-      />
+      /> */}
     </>
   );
 };

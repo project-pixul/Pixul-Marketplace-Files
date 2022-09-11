@@ -1,0 +1,34 @@
+.image-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  min-width: min-content;
+  width: 10rem;
+  height: 13.6rem;
+  text-align: center;
+  background-color: #191923;
+  font-size: 0.9em;
+
+  img {
+    height: 85px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin-top: 1rem;
+  }
+
+  .uid {
+    margin-top: 1.5rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  .service {
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+    opacity: 0.85;
+    font-weight: 500;
+  }
+}

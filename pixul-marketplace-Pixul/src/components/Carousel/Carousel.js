@@ -1,9 +1,6 @@
-import { useRef } from "react";
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { ImageCard } from "../Cards/ImageCard/ImageCard";
 import { CategoryCard } from "../Cards/CategoryCard/CategoryCard";
-
-import "./carousel.css";
+import "./carousel.scss";
 
 export const Carousel = ({
   items,
@@ -13,6 +10,7 @@ export const Carousel = ({
   showEscrowOnClick = false,
   withArrows,
 }) => {
+  console.log(items);
   return (
     <div className="carousel">
       {title && (
