@@ -13,7 +13,8 @@ import { db } from "../firebase";
 import { collection, query, orderBy, getDocs, limit } from "firebase/firestore";
 import { fetchPopularServices } from "../utils/fetchPopularServices";
 
-import "./Pages.css";
+import "./Pages.scss";
+import { ImageCardWrapper } from "../components/ImageCardWrapper/ImageCardWrapper";
 
 export const HomePage = () => {
   const [creatorsCardsList, setCreatorsCardsList /*creatorsCardsList */] =
@@ -109,13 +110,11 @@ export const HomePage = () => {
         ) : null}
 
         <PromotedCreators promotedCreatorInfo={promotedCreatorInfo} />
-        <div className="promotedCards">
-          <Carousel
-            withArrows={false}
-            items={creatorsCardsList}
-            itemType="image"
-          />
-        </div>
+        <ImageCardWrapper
+          withArrows={false}
+          items={creatorsCardsList}
+          itemType="image"
+        />
       </div>
     </div>
   );

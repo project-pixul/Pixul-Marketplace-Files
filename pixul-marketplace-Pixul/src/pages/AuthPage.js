@@ -16,7 +16,7 @@ import "firebase/compat/firestore";
 import { services } from "../API";
 import ForgetPasword from "../components/AuthForm/ForgetPasword";
 
-import "./Pages.css";
+import "./Pages.scss";
 
 export const AuthPage = () => {
   const [isSigningIn, setisSigningIn] = useState(true);

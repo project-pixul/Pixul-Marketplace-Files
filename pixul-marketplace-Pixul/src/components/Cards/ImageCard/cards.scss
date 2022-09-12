@@ -6,17 +6,17 @@
   padding: 1rem;
   border-radius: 0.25rem;
   min-width: min-content;
-  width: 10rem;
+  width: 10.8rem;
   height: 13.6rem;
   text-align: center;
   background-color: #191923;
-  font-size: 0.9em;
+  font-size: 0.92em;
 
   img {
-    height: 85px;
+    height: 95px;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    margin-top: 1rem;
+    margin-top: 0.4rem;
   }
 
   .uid {
@@ -27,8 +27,13 @@
 
   .service {
     margin-top: 0.5rem;
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     opacity: 0.85;
     font-weight: 500;
+  }
+
+  &:hover {
+    scale: 1.09;
+    transition: all linear 0.15s;
   }
 }
