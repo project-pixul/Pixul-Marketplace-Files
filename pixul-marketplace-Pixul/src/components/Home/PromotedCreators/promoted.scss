@@ -1,0 +1,44 @@
+.promoted {
+  .banner {
+    display: flex;
+    flex-direction: row;
+    background-color: #191923;
+    color: white;
+  }
+
+  .creator-details {
+    padding: 2rem 4rem;
+
+    h1 {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin-top: 0.3rem;
+      font-size: 1em;
+      font-weight: 600;
+    }
+
+    p {
+      margin-top: 2.5rem;
+      font-size: 15px;
+    }
+
+    button {
+      cursor: pointer;
+      margin-top: 2.5rem;
+      background-color: #5100ff;
+      color: white;
+      font-size: 0.8em;
+      font-weight: 600;
+      padding: 1em 1.4em;
+    }
+  }
+
+  img {
+    width: 48%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+  }
+}

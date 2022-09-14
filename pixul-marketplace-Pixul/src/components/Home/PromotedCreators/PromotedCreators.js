@@ -1,4 +1,4 @@
-import "./promoted.css";
+import "./promoted.scss";
 
 export const PromotedCreators = ({ promotedCreatorInfo }) => {
   const { creatorName, services, image } = promotedCreatorInfo;
@@ -6,12 +6,11 @@ export const PromotedCreators = ({ promotedCreatorInfo }) => {
   return (
     <div className="promoted">
       <h2>Promoted Creators</h2>
-      <div>
-        <div className="creator">
-          <div>
-            <h1>{creatorName}</h1>
-            <h2>{services[0]}</h2>
-          </div>
+      <div className="banner">
+        <div className="creator-details">
+          <h1>{creatorName}</h1>
+          <h2>{services[0]}</h2>
+
           <p>
             sagittis purus sit amet volutpat consequat mauris nunc congue nisi
             vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra
